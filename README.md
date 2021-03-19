@@ -1,6 +1,8 @@
 # Set Up EMA Java Application in Scala with Maven
 
+java -cp .;target/RTSDKJ_Maven-1.0-jar-with-dependencies.jar com.refinitiv.ema.provider.IProvider
 
+java -cp .;target/RTSDKJ_Maven-1.0-jar-with-dependencies.jar com.refinitiv.ema.consumer.Consumer
 
 ## References
 For further details, please check out the following resources:
