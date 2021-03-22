@@ -33,6 +33,14 @@
             <version>1.9.5</version>
         </dependency>
         -->
+        <!-- rfa -->
+        <dependency>
+            <groupId>com.reuters.rfa</groupId>
+            <artifactId>rfa</artifactId>
+            <version>8.2.0.2</version>
+        </dependency>
+
+        <!-- RTSDK -->
         <dependency>
             <groupId>com.refinitiv.ema</groupId>
             <artifactId>ema</artifactId>
