@@ -175,7 +175,7 @@
 
 			<RefreshFirstRequired value="1" />
 
-			<XmlTraceToStdout value="1"/>
+			<XmlTraceToStdout value="0"/>
 
         </IProvider>
 		<IProvider>
