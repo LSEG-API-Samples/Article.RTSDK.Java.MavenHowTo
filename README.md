@@ -11,7 +11,7 @@ This example project shows how to create the RTSDK - Java project with a simple 
 
 The example applications diagram is the following:
 
-![figure-1](images/diagram_1.png "Connection Diagram")
+![figure-1](images/diagram.png "Connection Diagram")
 
 
 ## IMPORTANT Rebranding Announcement: 
@@ -239,14 +239,18 @@ This example requires the following dependencies software and libraries.
 1. Oracle/Open JDK 8 or Oracle JDK 11.
 2. [Apache Maven](https://maven.apache.org/) project management and comprehension tool.
 3. Internet connection. 
-4. Refinitiv Real-Time Distribution System with Refinitiv Data Access Control System (DACS) for the *DACSConsumer.java* example. 
+4. Refinitiv Real-Time Data Dictionary files (*RDMFieldDictionary* and *enumtype.def*), you can download them from [GitHub page](https://github.com/Refinitiv/Real-Time-SDK/tree/master/Java/etc).
+4. Refinitiv Real-Time Distribution System with Refinitiv Data Access Control System (DACS) for the *DACSConsumer.java* example only. 
+5. Access to the Refinitiv Refinitiv Data Platform and Refinitiv Real-Time - Optimized. (for the *CloudConsumer.java* example only)
+
+Please contact your Refinitiv's representative to help you to access the Refinitiv Real-Time Distribution System, or RDP account, and services. 
 
 *Note:* 
 The RTSDK Java version 2.0.1 L1 (EMA Java 3.6.1) supports Oracle JDK versions 8, 11, and Open JDK version 8. If you are using other versions of RTSDK Java, please check the SDK's [README.md](https://github.com/Refinitiv/Real-Time-SDK/blob/master/Java/README.md) file regarding the supported Java version.
 
 ### Running the demo applications
 
-If your environment does not have the Maven installed, please follow the [Maven installation guide page](https://maven.apache.org/install.html) for more detail.
+If your environment does not have the Maven installed, please follow the [Maven installation guide page](https://maven.apache.org/install.html) for more detail. Next, please download the *RDMFieldDictionary* and *enumtype.def* files from [RTSDK GitHub repository page](https://github.com/Refinitiv/Real-Time-SDK/tree/master/Java/etc), then place them in the project *etc* folder. 
 
 #### Running IProvider and Consumer applications
 
@@ -303,6 +307,7 @@ Fid: 22 Name = BID DataType: Real Value: 39.91
 Fid: 25 Name = ASK DataType: Real Value: 39.94
 Fid: 30 Name = BIDSIZE DataType: Real Value: 10.0
 Fid: 31 Name = ASKSIZE DataType: Real Value: 19.0
+...
 ```
 
 #### Running DACSConsumer application
@@ -340,11 +345,91 @@ PermissionData: The list of PEs are
 62
 ```
 
+#### Running CloudConsumer applications
+
+Please contact your Refinitiv's representative to help you to access the RDP account and services. You can find more detail regarding the Refinitiv Real-Time - Optimized Machine-ID user, and App Key from [Getting Start with Refinitiv Data Platform article](https://developers.refinitiv.com/en/article-catalog/article/getting-start-with-refinitiv-data-platform).
+
+To run the Cloud example, open the project folder in the command prompt and then run the DACSConsumer example with the following command:
+
+```
+java -cp .;target/RTSDKJ_Maven-1.0-jar-with-dependencies.jar com.refinitiv.ema.cloud.CloudConsumer -username <machine-id> -password <password>-clientId <app_key> -keyfile <keystore file> -keypasswd <keystore password> -itemName <Request item name (optional)>
+```
+
+Please refer to [Building a keystore file to be used with an HTTPS (or ENCRYPTED) connection type for real-time Java-based APIs](https://developers.refinitiv.com/en/article-catalog/article/building-keystore-file-be-used-https-or-encrypted-connection-type-real-time-java-based-apis) article to create your Keystore file which **is mandatory**. 
+
+#### CloudConsumer application result
+
+```
+Services : 
+    Service :
+        Provider : aws
+        Transport : tcp
+        Endpoint : apac-1-t2.streaming-pricing-api.refinitiv.com
+        Port : 14002
+        Data Format : rwf
+        Location : ap-southeast-1a
+    Service :
+        Provider : aws
+        Transport : tcp
+        Endpoint : apac-3-t2.streaming-pricing-api.refinitiv.com
+        Port : 14002
+        Data Format : rwf
+        Location : ap-southeast-1a  ap-southeast-1b
+    Service :
+        Provider : aws
+        Transport : tcp
+        Endpoint : apac-2-t2.streaming-pricing-api.refinitiv.com
+        Port : 14002
+        Data Format : rwf
+        Location : ap-southeast-1b
+    Service :
+        Provider : aws
+        Transport : tcp
+        Endpoint : emea-1-t2.streaming-pricing-api.refinitiv.com
+        Port : 14002
+        Data Format : rwf
+        Location : eu-west-1a
+    ...
+
+Mar 30, 2021 2:01:14 PM com.refinitiv.ema.access.ChannelCallbackClient reactorChannelEventCallback
+INFO: loggerMsg
+    ClientName: ChannelCallbackClient
+    Severity: Info
+    Text:    Received ChannelUp event on channel Channel_1
+        Instance Name Consumer_1_1
+        Component Version ads3.4.2.L1.linux.tis.rrg 64-bit
+loggerMsgEnd
+
+
+RefreshMsg
+    streamId="5"
+    domain="MarketPrice Domain"
+    solicited
+    RefreshComplete
+    state="Open / Ok / None / ''"
+    itemGroup="01 05"
+    permissionData="03 01 01 36 3c"
+    name="/EUR="
+    nameType="1"
+    serviceId="257"
+    serviceName="ELEKTRON_DD"
+    Payload dataType="FieldList"
+        FieldList FieldListNum="99" DictionaryId="1"
+            FieldEntry fid="1" name="PROD_PERM" dataType="UInt" value="363"
+            FieldEntry fid="2" name="RDNDISPLAY" dataType="UInt" value="153"
+            FieldEntry fid="3" name="DSPLY_NAME" dataType="Rmtes" value="SANTANDER    H/d"
+            FieldEntry fid="5" name="TIMACT" dataType="Time" value="06:46:00:000:000:000"
+            FieldEntry fid="11" name="NETCHNG_1" dataType="Real" value="-0.0012"
+            FieldEntry fid="12" name="HIGH_1" dataType="Real" value="1.1773"
+            FieldEntry fid="13" name="LOW_1" dataType="Real" value="1.1751"
+...
+```
+
 ## Conclusion
 
-The RTSDK Java is now available in [Maven central repository](https://search.maven.org/) which makes Java developers can implement Real-Time application with the build automation tools such as Apache Maven](https://maven.apache.org/), [Gradle](https://gradle.org/), or even dependency manager tool like [Apache Ivy](https://ant.apache.org/ivy/). This will helps Java developers reduce the complexity of maintaining jar file dependencies, easily share the development environment among peers, and support various build processes that match developers' requirements.   
+The RTSDK Java is now available in [Maven central repository](https://search.maven.org/) which makes Java developers can implement the Real-Time application with the build automation tools such as [Apache Maven](https://maven.apache.org/), [Gradle](https://gradle.org/), or even the dependency manager tool like [Apache Ivy](https://ant.apache.org/ivy/). This will helps Java developers reduce the complexity of maintaining jar file dependencies, easily share the development environment among peers, and support various build processes that match developers' workflow.   
 
-If the application requires a 3rd Party or customized jar file which is not available in the Maven central repository, the application can add those jar files to the local repository and use Maven to build and manage it along with other dependencies jar files.
+If the application requires a 3rd Party or customized jar file which is not available in the public Maven central repository, the application can add those jar files to the local repository and use Maven to build and manage it along with other dependencies jar files.
 
 ## References
 
@@ -358,5 +443,6 @@ For further details, please check out the following resources:
 * [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
 * [Maven in 5 Minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
 * [Maven Central Repository Search](https://search.maven.org/)
+* [Building a keystore file to be used with an HTTPS (or ENCRYPTED) connection type for real-time Java-based APIs](https://developers.refinitiv.com/en/article-catalog/article/building-keystore-file-be-used-https-or-encrypted-connection-type-real-time-java-based-apis) article.
 
 For any question related to this article or RTSDK page, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/).
