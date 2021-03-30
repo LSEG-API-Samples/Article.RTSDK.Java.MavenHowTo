@@ -1,6 +1,11 @@
 # Set Up Refinitiv Real-Time SDK Java Application with Maven
+- version: 1.0.0
+- Last update: March 2021
+- Environment: Windows, Linux
+- Compiler: Java
+- Prerequisite: [Demo prerequisite](#prerequisite)
 
-## Overview
+## <a id="Introduction"></a>Introduction
 
 
 [Refinitiv Real-Time SDK (Java Edition)](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java) (RTSDK, formerly known as Elektron SDK) is a suite of modern and open source APIs that aim to simplify development through a strong focus on ease of use and standardized access to a broad set of Refinitiv proprietary content and services via the proprietary TCP connection named RSSL and proprietary binary message encoding format named OMM Message. The capabilities range from low latency/high-performance APIs right through to simple streaming Web APIs. 
@@ -14,17 +19,15 @@ The example applications diagram is the following:
 ![figure-1](images/diagram.png "Connection Diagram")
 
 
-## IMPORTANT Rebranding Announcement: 
+## <a id="rebrand"></a>IMPORTANT Rebranding Announcement: 
 
 Starting with version RTSDK 2.0.0.L1 (same as EMA/ETA 3.6.0.L1), there are namespace changes and library name changes. Please note that all interfaces remain the same as prior releases of RTSDK and Elektron SDK and will remain fully wire compatible. Along with RTSDK 2.X version, a [REBRAND.md](https://github.com/Refinitiv/Real-Time-SDK/blob/master/REBRAND.md) is published to detail impact to existing applications and how to quickly adapt to the re-branded libraries. Existing applications will continue to work indefinitely as-is.  Applications should be proactively rebranded to be able to utilize new features, security updates or fixes post 2.X release. Please see [PCN](https://my.refinitiv.com/content/mytr/en/pcnpage/12072.html?_ga=2.103280071.632863608.1606731450-325683966.1598503157) for more details on support. 
 
-## RTSDK Java with Gradle
+## <a id="gradle"></a>RTSDK Java with Gradle
 
 RTSDK - Java package comes with Gradle build tool supported by default, please find more detail in [RTSDK Java Build System page](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java/quick-start#rtsdk-build-system) and RTSDK - Java's README file. You can download the SDK package from [Developer Portal website](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java/download) and [GitHub repository](https://github.com/Refinitiv/Real-Time-SDK).
 
-
-
-## RTSDK Java Maven Repository
+## <a id="rtsdk_java_maven"></a>RTSDK Java with Maven
 
 The Refinitiv Real-Time SDK Java is now available in [Maven Central Repository](https://search.maven.org/). You can define the following dependency in Maven's pom.xml file to let Maven automatically download the [EMA Java library](https://search.maven.org/artifact/com.refinitiv.ema/ema/) and [ETA Java library](https://search.maven.org/artifact/com.refinitiv.eta/eta) for the application.
 
@@ -35,7 +38,7 @@ The Refinitiv Real-Time SDK Java is now available in [Maven Central Repository](
 Note: 
 - This article is based on EMA Java version 3.6.1 L1 (RTSDK Java Edition 2.0.1 L1). 
 
-### Maven Standard Directory Layout
+### <a id="maven_layout"></a>Maven Standard Directory Layout
 
 By default, the Maven project uses the following directory layout to standardize the folder structure.
 - *src/main/java*: Application/Library sources
@@ -49,7 +52,7 @@ Please see the full directories layout description on [Introduction to the Stand
 
 Note: The Maven common directly layout is mostly identical to [Gradle](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html).
 
-### Maven pom.xml setting for EMA Java
+### <a id="ema_maven"></a>Maven pom.xml setting for EMA Java
 
 The ```pom.xml``` file the main Maven's project configuration. This XML file contains the information required to build a project.
 
@@ -124,7 +127,7 @@ Please notice that I use the  [Maven variables](https://maven.apache.org/guides/
 </project>
 ```
 
-### Maven pom.xml setting for ETA Java
+### <a id="eta_maven"></a>Maven pom.xml setting for ETA Java
 
 The pom.xml file for the ETA Java application is similar to the EMA Java application except you do not need to declare EMA dependency. 
 
@@ -166,7 +169,7 @@ The pom.xml file for the ETA Java application is similar to the EMA Java applica
 </project>
 ```
 
-### Maven pom.xml setting for non-Maven Jar File
+### <a id="nonmaven_jar"></a>Maven pom.xml setting for non-Maven Jar File
 
 If the project requires the local jar file that not yet part of the public [Maven repository](https://search.maven.org/), you can use [Maven Install Plugin](https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html) to install a JAR in the local Maven repository with the following command.
 
@@ -202,7 +205,7 @@ Then, all Maven projects in the same machine can use RFA Java by declaring the d
 
 If you are interested to set your internal Maven repository for your team, please refer to [Introduction to Repositories guide](https://maven.apache.org/guides/introduction/introduction-to-repositories.html) and [How to set up and use a JFrog Artifactory as a local Maven repository](https://www.theserverside.com/video/How-to-set-up-and-use-a-JFrog-Artifactory-Maven-repository) page.
 
-### Building the project
+### <a id="building"></a>Building the project
 
 You can run the Maven ```mvn package``` command to compile all applications in the Maven project and build the applications jar file. The class and jar files will be available in the *target* folder by default.
 
@@ -248,7 +251,7 @@ Once you run the Maven ```mvn package``` command, Maven will build a single-all-
 
 Please check [Running Maven Tools page](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html#running-maven-tools) for more detail about other useful Maven commands.
 
-### Demo prerequisite
+### <a id="prerequisite"></a>Demo prerequisite
 This example requires the following dependencies software and libraries.
 1. Oracle/Open JDK 8 or Oracle JDK 11.
 2. [Apache Maven](https://maven.apache.org/) project management and comprehension tool.
@@ -262,7 +265,7 @@ Please contact your Refinitiv's representative to help you to access the Refinit
 *Note:* 
 The RTSDK Java version 2.0.1 L1 (EMA Java 3.6.1) supports Oracle JDK versions 8, 11, and Open JDK version 8. If you are using other versions of RTSDK Java, please check the SDK's [README.md](https://github.com/Refinitiv/Real-Time-SDK/blob/master/Java/README.md) file regarding the supported Java version.
 
-### Running the demo applications
+### <a id="running"></a>Running the demo applications
 
 If your environment does not have the Maven installed, please follow the [Maven installation guide page](https://maven.apache.org/install.html) for more detail. Next, please download the *RDMFieldDictionary* and *enumtype.def* files from [RTSDK GitHub repository page](https://github.com/Refinitiv/Real-Time-SDK/tree/master/Java/etc), then place them in the project *etc* folder. 
 
@@ -439,13 +442,13 @@ RefreshMsg
 ...
 ```
 
-## Conclusion
+## <a id="conclusion"></a>Conclusion
 
 The RTSDK Java is now available in [Maven central repository](https://search.maven.org/) which makes Java developers can implement the Real-Time application with the build automation tools such as [Apache Maven](https://maven.apache.org/), [Gradle](https://gradle.org/), or even the dependency manager tool like [Apache Ivy](https://ant.apache.org/ivy/). This will helps Java developers reduce the complexity of maintaining jar file dependencies, easily share the development environment among peers, and support various build processes that match developers' workflow.   
 
 If the application requires a 3rd Party or customized jar file which is not available in the public Maven central repository, the application can add those jar files to the local repository and use Maven to build and manage it along with other dependencies jar files.
 
-## References
+## <a id="ref"></a>References
 
 For further details, please check out the following resources:
 * [Refinitiv Real-Time SDK Java page](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) web site.
