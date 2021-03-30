@@ -22,6 +22,8 @@ Starting with version RTSDK 2.0.0.L1 (same as EMA/ETA 3.6.0.L1), there are names
 
 RTSDK - Java package comes with Gradle build tool supported by default, please find more detail in [RTSDK Java Build System page](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java/quick-start#rtsdk-build-system) and RTSDK - Java's README file. You can download the SDK package from [Developer Portal website](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java/download) and [GitHub repository](https://github.com/Refinitiv/Real-Time-SDK).
 
+
+
 ## RTSDK Java Maven Repository
 
 The Refinitiv Real-Time SDK Java is now available in [Maven Central Repository](https://search.maven.org/). You can define the following dependency in Maven's pom.xml file to let Maven automatically download the [EMA Java library](https://search.maven.org/artifact/com.refinitiv.ema/ema/) and [ETA Java library](https://search.maven.org/artifact/com.refinitiv.eta/eta) for the application.
@@ -33,7 +35,19 @@ The Refinitiv Real-Time SDK Java is now available in [Maven Central Repository](
 Note: 
 - This article is based on EMA Java version 3.6.1 L1 (RTSDK Java Edition 2.0.1 L1). 
 
+### Maven Standard Directory Layout
 
+By default, the Maven project uses the following directory layout to standardize the folder structure.
+- *src/main/java*: Application/Library sources
+- *src/main/resources*:	Application/Library resources
+- *src/test/java*:	Test sources
+- *src/test/resources*:	Test resources
+- *LICENSE.txt*:	Project's license
+- *README.txt*:	Project's readme
+
+Please see the full directories layout description on [Introduction to the Standard Directory Layout](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html) page. 
+
+Note: The Maven common directly layout is mostly identical to [Gradle](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html).
 
 ### Maven pom.xml setting for EMA Java
 
