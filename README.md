@@ -177,7 +177,7 @@ If the project requires the local jar file that not yet part of the public [Mave
 mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
 ```
 
-This project uses [Refinitiv Robust Foundation API (RFA) - Java](https://developers.refinitiv.com/en/api-catalog/thomson-reuters-enterprise-platform/robust-foundation-api-rfa-java) as an example non-Maven jar file. The *DACSConsumer* example application consumes real-time data from Refinitiv Real-Time Distribution Server and then uses ```com.reuters.rfa.dacs``` package to extract the Permission information from incoming data.
+This project uses [Refinitiv Robust Foundation API (RFA) - Java](https://developers.refinitiv.com/en/api-catalog/thomson-reuters-enterprise-platform/robust-foundation-api-rfa-java) as an example non-Maven jar file. The *DACSConsumer* example application consumes real-time data from Refinitiv Real-Time Distribution Server and then uses the DACS Lock API in ```com.reuters.rfa.dacs``` package to extract the Permission information such as the service id and the list of PEs from incoming data.
 
 ํYou can install the *rfa.jar* file to the local Maven repository with the following command
 
