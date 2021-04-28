@@ -8,7 +8,7 @@
 ## <a id="Introduction"></a>Introduction
 
 
-[Refinitiv Real-Time SDK (Java Edition)](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java) (RTSDK, formerly known as Elektron SDK) is a suite of modern and open source APIs that aim to simplify development through a strong focus on ease of use and standardized access to a broad set of Refinitiv proprietary content and services via the proprietary TCP connection named RSSL and proprietary binary message encoding format named OMM Message. The capabilities range from low latency/high-performance APIs right through to simple streaming Web APIs. 
+[Refinitiv Real-Time SDK (Java Edition)](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java) (RTSDK, formerly known as Elektron SDK) is a suite of modern and open source APIs that aim to simplify development through a strong focus on ease of use and standardized access to a broad set of Refinitiv proprietary content and services via the proprietary TCP connection named RSSL and proprietary binary message encoding format named OMM Message. The capabilities range from low latency/high-performance APIs right through to simple streaming Web APIs. 
 
 The SDK has been mavenized to support [Apache Maven](https://maven.apache.org/) and [Gradle](https://gradle.org/) build automation tools since Refinitiv Real-Time SDK (RTSDK) Java (formerly known as Elektron SDK) version 1.2. This supported helps Java developers to build RTSDK Java application, manage its dependencies (Java Developers do not need to manual manage different versions of jar files anymore), and better collaboration in the team.
 
@@ -25,7 +25,7 @@ Starting with version RTSDK 2.0.0.L1 (same as EMA/ETA 3.6.0.L1), there are names
 
 ## <a id="gradle"></a>RTSDK Java with Gradle
 
-RTSDK - Java package comes with Gradle build tool supported by default, please find more detail in [RTSDK Java Build System page](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java/quick-start#rtsdk-build-system) and RTSDK - Java's README file. You can download the SDK package from [Developer Portal website](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java/download) and [GitHub repository](https://github.com/Refinitiv/Real-Time-SDK).
+RTSDK - Java package comes with Gradle build tool supported by default, please find more detail in [RTSDK Java Build System page](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java/quick-start#rtsdk-build-system) and RTSDK - Java's README file. You can download the SDK package from [Developer Portal website](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java/download) and [GitHub repository](https://github.com/Refinitiv/Real-Time-SDK).
 
 ## <a id="rtsdk_java_maven"></a>RTSDK Java with Maven
 
@@ -461,9 +461,9 @@ If the application requires a 3rd Party or customized jar file which is not avai
 ## <a id="ref"></a>References
 
 For further details, please check out the following resources:
-* [Refinitiv Real-Time SDK Java page](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) web site.
+* [Refinitiv Real-Time SDK Java page](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java) on the [Refinitiv Developer Community](https://developers.refinitiv.com/) web site.
 * [Refinitiv Real-Time SDK Family](https://developers.refinitiv.com/en/use-cases-catalog/refinitiv-real-time) page.
-* [Enterprise Message API Java Quick Start](https://developers.refinitiv.com/en/api-catalog/elektron/elektron-sdk-java/quick-start)
+* [Enterprise Message API Java Quick Start](https://developers.refinitiv.com/en/api-catalog/refinitiv-real-time-opnsrc/rt-sdk-java/quick-start)
 * [Developer Webinar: Introduction to Enterprise App Creation With Open-Source Enterprise Message API](https://www.youtube.com/watch?v=2pyhYmgHxlU)
 * [Developer Article: 10 important things you need to know before you write an Enterprise Real Time application](https://developers.refinitiv.com/article/10-important-things-you-need-know-you-write-elektron-real-time-application)
 * [Apache Maven Project page](https://www.apache.org/)
