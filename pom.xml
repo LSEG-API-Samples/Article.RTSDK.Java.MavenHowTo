@@ -66,6 +66,11 @@
             <artifactId>ansipage</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.refinitiv.eta.json.converter</groupId>
+            <artifactId>etajConverter</artifactId>
+            <version>${rtsdk.version}</version>
+        </dependency>
     </dependencies>
 
     

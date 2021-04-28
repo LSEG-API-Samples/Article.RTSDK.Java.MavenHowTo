@@ -1,6 +1,6 @@
 # Set Up Refinitiv Real-Time SDK Java Application with Maven
 - version: 1.0.0
-- Last update: March 2021
+- Last update: April 2021
 - Environment: Windows, Linux
 - Compiler: Java
 - Prerequisite: [Demo prerequisite](#prerequisite)
@@ -123,6 +123,11 @@ Please notice that I use the  [Maven variables](https://maven.apache.org/guides/
             <artifactId>ansipage</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.refinitiv.eta.json.converter</groupId>
+            <artifactId>etajConverter</artifactId>
+            <version>${rtsdk.version}</version>
+        </dependency>
     </dependencies>
 </project>
 ```
@@ -163,6 +168,11 @@ The pom.xml file for the ETA Java application is similar to the EMA Java applica
         <dependency>
             <groupId>com.refinitiv.eta.ansi</groupId>
             <artifactId>ansipage</artifactId>
+            <version>${rtsdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.refinitiv.eta.json.converter</groupId>
+            <artifactId>etajConverter</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
     </dependencies>
@@ -277,10 +287,10 @@ Firstly, open the project folder in the command prompt and then run the IProvide
 java -cp .;target/RTSDKJ_Maven-1.0-jar-with-dependencies.jar com.refinitiv.ema.provider.IProvider
 ```
 
-Then, open another command prompt to the project folder and run the following command to start the Consumer example
+Then, open another command prompt to the project folder and run the following command to start the Consumer example (we can use just ```java -jar``` command directly as the main class is ```com.refinitiv.ema.consumer.Consumer```)
 
 ```
-java -cp .;target/RTSDKJ_Maven-1.0-jar-with-dependencies.jar com.refinitiv.ema.consumer.Consumer
+java -jar ./target/RTSDKJ_Maven-1.0-jar-with-dependencies.jar
 ```
 
 #### IProvider and Consumer applications result
