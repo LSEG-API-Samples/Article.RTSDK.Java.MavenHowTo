@@ -266,7 +266,6 @@ This example requires the following dependencies software and libraries.
 1. Oracle/Open JDK 8 or Oracle JDK 11.
 2. [Apache Maven](https://maven.apache.org/) project management and comprehension tool.
 3. Internet connection. 
-4. Refinitiv Real-Time Data Dictionary files (*RDMFieldDictionary* and *enumtype.def*), you can download them from [GitHub page](https://github.com/Refinitiv/Real-Time-SDK/tree/master/Java/etc).
 4. Refinitiv Real-Time Distribution System with Refinitiv Data Access Control System (DACS) for the *DACSConsumer.java* example only. 
 5. Access to the Refinitiv Refinitiv Data Platform and Refinitiv Real-Time - Optimized. (for the *CloudConsumer.java* example only)
 
@@ -277,7 +276,7 @@ The RTSDK Java version 2.0.1 L1 (EMA Java 3.6.1) supports Oracle JDK versions 8,
 
 ### <a id="running"></a>Running the demo applications
 
-If your environment does not have the Maven installed, please follow the [Maven installation guide page](https://maven.apache.org/install.html) for more detail. Next, please download the *RDMFieldDictionary* and *enumtype.def* files from [RTSDK GitHub repository page](https://github.com/Refinitiv/Real-Time-SDK/tree/master/Java/etc), then place them in the project *etc* folder. 
+If your environment does not have the Maven installed, please follow the [Maven installation guide page](https://maven.apache.org/install.html) for more detail.
 
 #### Running IProvider and Consumer applications
 
