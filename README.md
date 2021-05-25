@@ -1,6 +1,6 @@
 # Set Up Refinitiv Real-Time SDK Java Application with Maven
-- version: 1.0.0
-- Last update: April 2021
+- version: 1.1.0
+- Last update: May 2021
 - Environment: Windows, Linux
 - Compiler: Java
 - Prerequisite: [Demo prerequisite](#prerequisite)
@@ -80,7 +80,7 @@ The brief information of each POM file elements are the following:
 
 Please see more detail on the [Maven Quick Start page](https://maven.apache.org/guides/getting-started/) for a full explanation of the POM essentials elements. 
 
-You can specify the following EMA Java application dependencies in the Maven pom.xml file. The EMA Java is the message-level API built on top of the ETA Java (Transport API), so the application needs ETA libraries too.
+You can specify the following EMA Java application dependencies in the Maven pom.xml file. The EMA Java is the message-level API built on top of the ETA Java (Transport API), the Maven can automatic pull all dependency artifacts within Maven central for the application.
 
 Please notice that I use the  [Maven variables](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#project-interpolation-and-variables) ```<rtsdk.version>3.6.1.0</rtsdk.version>``` to set the library version in a single place in the pom.xml file.
 
@@ -98,34 +98,10 @@ Please notice that I use the  [Maven variables](https://maven.apache.org/guides/
 
     <dependencies>
         <!-- RTSDK -->
+        <!-- For EMA Java Project -->
         <dependency>
             <groupId>com.refinitiv.ema</groupId>
             <artifactId>ema</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta</groupId>
-            <artifactId>eta</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.valueadd</groupId>
-            <artifactId>etaValueAdd</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.valueadd.cache</groupId>
-            <artifactId>etaValueAddCache</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.ansi</groupId>
-            <artifactId>ansipage</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.json.converter</groupId>
-            <artifactId>etajConverter</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
     </dependencies>
@@ -134,7 +110,7 @@ Please notice that I use the  [Maven variables](https://maven.apache.org/guides/
 
 ### <a id="eta_maven"></a>Maven pom.xml setting for ETA Java
 
-The pom.xml file for the ETA Java application is similar to the EMA Java application except you do not need to declare EMA dependency. 
+The pom.xml file for the ETA Java application is the following. Please note that the project needs ```com.refinitiv.eta.valueadd.cache``` artifact when the ETA Java project use ETA ValueAdd Cache module only.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -150,6 +126,7 @@ The pom.xml file for the ETA Java application is similar to the EMA Java applica
 
     <dependencies>
         <!-- RTSDK -->
+        <!-- For ETA Java Project -->
         <dependency>
             <groupId>com.refinitiv.eta</groupId>
             <artifactId>eta</artifactId>
@@ -161,11 +138,6 @@ The pom.xml file for the ETA Java application is similar to the EMA Java applica
             <version>${rtsdk.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.refinitiv.eta.valueadd.cache</groupId>
-            <artifactId>etaValueAddCache</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.refinitiv.eta.ansi</groupId>
             <artifactId>ansipage</artifactId>
             <version>${rtsdk.version}</version>
@@ -173,6 +145,12 @@ The pom.xml file for the ETA Java application is similar to the EMA Java applica
         <dependency>
             <groupId>com.refinitiv.eta.json.converter</groupId>
             <artifactId>etajConverter</artifactId>
+            <version>${rtsdk.version}</version>
+        </dependency>
+        <!-- For ETA Java with ValueAdd Cache Module Project -->
+        <dependency>
+            <groupId>com.refinitiv.eta.valueadd.cache</groupId>
+            <artifactId>etaValueAddCache</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
     </dependencies>

@@ -41,11 +41,14 @@
         </dependency>
 
         <!-- RTSDK -->
+        <!-- For EMA Java Project -->
         <dependency>
             <groupId>com.refinitiv.ema</groupId>
             <artifactId>ema</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
+        <!-- For ETA Java Project -->
+        <!--
         <dependency>
             <groupId>com.refinitiv.eta</groupId>
             <artifactId>eta</artifactId>
@@ -54,11 +57,6 @@
         <dependency>
             <groupId>com.refinitiv.eta.valueadd</groupId>
             <artifactId>etaValueAdd</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.valueadd.cache</groupId>
-            <artifactId>etaValueAddCache</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
         <dependency>
@@ -71,6 +69,15 @@
             <artifactId>etajConverter</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
+        -->
+        <!-- For ETA Java with ValueAdd Cache Module Project -->
+        <!--
+        <dependency>
+            <groupId>com.refinitiv.eta.valueadd.cache</groupId>
+            <artifactId>etaValueAddCache</artifactId>
+            <version>${rtsdk.version}</version>
+        </dependency>
+        -->
     </dependencies>
 
     
