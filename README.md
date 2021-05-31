@@ -110,7 +110,7 @@ Please notice that I use the  [Maven variables](https://maven.apache.org/guides/
 
 ### <a id="eta_maven"></a>Maven pom.xml setting for ETA Java
 
-The pom.xml file for the ETA Java application is the following. The Maven can automatic pull ETA, ETA ValueAdd and ETA JSON Converter artifacts within Maven central for the application for the application with the ```com.refinitiv.eta.valueadd.cache``` dependency declaration.
+The pom.xml file for the ETA Java application is the following. The Maven can automatic pull ETA, ETA ValueAdd and ETA JSON Converter artifacts within Maven central for the application with the ```com.refinitiv.eta.valueadd.cache``` dependency declaration.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
