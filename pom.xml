@@ -50,34 +50,17 @@
         <!-- For ETA Java Project -->
         <!--
         <dependency>
-            <groupId>com.refinitiv.eta</groupId>
-            <artifactId>eta</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.valueadd</groupId>
-            <artifactId>etaValueAdd</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.refinitiv.eta.ansi</groupId>
             <artifactId>ansipage</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.json.converter</groupId>
-            <artifactId>etajConverter</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        -->
-        <!-- For ETA Java with ValueAdd Cache Module Project -->
-        <!--
         <dependency>
             <groupId>com.refinitiv.eta.valueadd.cache</groupId>
             <artifactId>etaValueAddCache</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
         -->
+
     </dependencies>
 
     

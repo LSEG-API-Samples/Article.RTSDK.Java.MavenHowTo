@@ -110,7 +110,7 @@ Please notice that I use the  [Maven variables](https://maven.apache.org/guides/
 
 ### <a id="eta_maven"></a>Maven pom.xml setting for ETA Java
 
-The pom.xml file for the ETA Java application is the following. Please note that the project needs ```com.refinitiv.eta.valueadd.cache``` artifact when the ETA Java project use ETA ValueAdd Cache module only.
+The pom.xml file for the ETA Java application is the following. The Maven can automatic pull ETA, ETA ValueAdd and ETA JSON Converter artifacts within Maven central for the application for the application with the ```com.refinitiv.eta.valueadd.cache``` dependency declaration.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -128,26 +128,10 @@ The pom.xml file for the ETA Java application is the following. Please note that
         <!-- RTSDK -->
         <!-- For ETA Java Project -->
         <dependency>
-            <groupId>com.refinitiv.eta</groupId>
-            <artifactId>eta</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.valueadd</groupId>
-            <artifactId>etaValueAdd</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.refinitiv.eta.ansi</groupId>
             <artifactId>ansipage</artifactId>
             <version>${rtsdk.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.refinitiv.eta.json.converter</groupId>
-            <artifactId>etajConverter</artifactId>
-            <version>${rtsdk.version}</version>
-        </dependency>
-        <!-- For ETA Java with ValueAdd Cache Module Project -->
         <dependency>
             <groupId>com.refinitiv.eta.valueadd.cache</groupId>
             <artifactId>etaValueAddCache</artifactId>
