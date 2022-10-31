@@ -1,6 +1,6 @@
 # Set Up Refinitiv Real-Time SDK Java Application with Maven
-- version: 1.1.0
-- Last update: Oct 2021
+- version: 1.1.1
+- Last update: Oct 2022
 - Environment: Windows, Linux
 - Compiler: Java
 - Prerequisite: [Demo prerequisite](#prerequisite)
@@ -83,6 +83,8 @@ Please see more detail on the [Maven Quick Start page](https://maven.apache.org/
 You can specify the following EMA Java application dependencies in the Maven pom.xml file. The EMA Java is the message-level API built on top of the ETA Java (Transport API), the Maven can automatic pull all dependency artifacts within Maven central for the application.
 
 Please notice that I use the  [Maven variables](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#project-interpolation-and-variables) ```<rtsdk.version>3.6.1.0</rtsdk.version>``` to set the library version in a single place in the pom.xml file.
+
+**Update Oct 2022**: For RTSDK version 2.0.7.L1, please set the RTSDK version as ```3.6.7.1``` in the pom.xml file.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -434,3 +436,8 @@ For further details, please check out the following resources:
 * [Building a keystore file to be used with an HTTPS (or ENCRYPTED) connection type for real-time Java-based APIs](https://developers.refinitiv.com/en/article-catalog/article/building-keystore-file-be-used-https-or-encrypted-connection-type-real-time-java-based-apis) article.
 
 For any question related to this article or RTSDK page, please use the Developer Community [Q&A Forum](https://community.developers.refinitiv.com/).
+
+## <a id="articles"></a>Developers Articles:
+
+* [How to Set Up Refinitiv Real-Time SDK Java Application with Maven](https://developers.refinitiv.com/en/article-catalog/article/how-to-set-up-refinitiv-real-time-sdk-java-application-with-mave) on the the [Refinitiv Developer Community](https://developers.refinitiv.com/) web site.
+* [How to Set Up Refinitiv Real-Time SDK Java Application with Maven](https://wasin-waeosri.medium.com/how-to-run-real-time-sdk-java-application-with-maven-b3ebbdfa119f) on the Medium blog post.
