@@ -1,6 +1,6 @@
 # Set Up Refinitiv Real-Time SDK Java Application with Maven
 - version: 1.1.1
-- Last update: Oct 2022
+- Last update: Nov 2022
 - Environment: Windows, Linux
 - Compiler: Java
 - Prerequisite: [Demo prerequisite](#prerequisite)
@@ -84,7 +84,9 @@ You can specify the following EMA Java application dependencies in the Maven pom
 
 Please notice that I use the  [Maven variables](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#project-interpolation-and-variables) ```<rtsdk.version>3.6.1.0</rtsdk.version>``` to set the library version in a single place in the pom.xml file.
 
-**Update Oct 2022**: For RTSDK version *2.0.7.L1*, please set the RTSDK version as ```3.6.7.1``` in the pom.xml file.
+**Update Nov 2022**: 
+- For RTSDK version 2.0.7.**L1**, please specify the RTSDK version as **3.6.7.1** in the pom.xml file.
+- For RTSDK version 2.0.7.**L2**, please specify the RTSDK version as **3.6.7.3** in the pom.xml file.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -114,7 +116,9 @@ Please notice that I use the  [Maven variables](https://maven.apache.org/guides/
 
 The pom.xml file for the ETA Java application is the following. The Maven can automatic pull ETA, ETA ValueAdd and ETA JSON Converter artifacts within Maven central for the application with the ```com.refinitiv.eta.valueadd.cache``` dependency declaration.
 
-**Update Oct 2022**: For RTSDK version *2.0.7.L1*, please set the RTSDK version as ```3.6.7.1``` in the pom.xml file.
+**Update Nov 2022**: 
+- For RTSDK version 2.0.7.**L1**, please specify the RTSDK version as **3.6.7.1** in the pom.xml file.
+- For RTSDK version 2.0.7.**L2**, please specify the RTSDK version as **3.6.7.3** in the pom.xml file.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
